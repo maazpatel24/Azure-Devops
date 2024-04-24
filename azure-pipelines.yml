@@ -30,15 +30,27 @@ trigger:
 
 # File: azure-pipelines.yml
 
-pool:
-  vmImage: 'ubuntu-latest'
+# pool:
+#   vmImage: 'ubuntu-latest'
 
-stages:
-- stage: Install
-  jobs: 
-  - job: npminstall
-    steps:
-    - script: echo 'install'
-      displayName: 'Npm'
-- template: templates/stages1.yml # Template reference
-- template: templates/stages2.yml # Template reference
+# stages:
+# - stage: Install
+#   jobs: 
+#   - job: npminstall
+#     steps:
+#     - script: echo 'install'
+#       displayName: 'Npm'
+# - template: templates/stages1.yml # Template reference
+# - template: templates/stages2.yml # Template reference
+# ------------------------------------------------------------------
+
+# Repo: Contoso/LinuxProduct
+# File: azure-pipelines.yml
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: RepoTemplates/BuildTemplates
+      
+jobs:
+- template: common.yml@templates  # Template reference
