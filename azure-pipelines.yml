@@ -21,4 +21,8 @@ trigger:
 # File: azure-pipelines.yml
 
 jobs:
-- template: templates/jobs.yml  # Template reference
+# - template: templates/jobs.yml  # Template reference
+- template: templates/npm-with-params.yml  # Template reference
+  parameters:
+    name: Linux
+    vmImage: 'ubuntu-latest'
