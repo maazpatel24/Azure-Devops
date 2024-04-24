@@ -1,10 +1,10 @@
 # File: templates/npm-with-params.yml
 
-parameters:
-- name: name  # defaults for any parameters that aren't specified
-  default: ''
-- name: vmImage
-  default: ''
+# parameters:
+# - name: name  # defaults for any parameters that aren't specified
+#   default: ''
+# - name: vmImage
+#   default: ''
 
 jobs:
 - job: ${{ parameters.name }}
