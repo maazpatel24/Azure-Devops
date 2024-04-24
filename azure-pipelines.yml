@@ -20,5 +20,5 @@ trigger:
 
 # File: azure-pipelines.yml
 
-steps:
-  - template: templates/npm-steps.yml  # Template reference
+jobs:
+- template: templates/jobs.yml  # Template reference
