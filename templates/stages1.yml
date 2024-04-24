@@ -4,4 +4,4 @@ stages:
   jobs:
   - job: angularinstall
     steps:
-    - script: npm install angular
+    - script: echo 'npm install angular'

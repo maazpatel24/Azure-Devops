@@ -38,8 +38,7 @@ stages:
   jobs: 
   - job: npminstall
     steps:
-    - task: Npm@1
-      inputs:
-        command: 'install'
+    - script: echo 'install'
+      displayName: 'Npm'
 - template: templates/stages1.yml # Template reference
 - template: templates/stages2.yml # Template reference
