@@ -6,26 +6,24 @@
 trigger:
 - main
 
-# pool:
-#   vmImage: ubuntu-latest
+pool:
+  vmImage: ubuntu-latest
 
-# steps:
-# - script: echo Hello, world!
-#   displayName: 'Run a one-line script'
+resources: 
+  repositories:
+    - repository: notification
+      type: github
+      name: core-templates
 
-# - script: |
-#     echo Add other tasks to build, test, and deploy your project.
-#     echo See https://aka.ms/yaml
-#   displayName: 'Run a multi-line script'
+jobs:
+  - template: notification/senders.yml@notification
+    parameters:
+      message: "Hello world Maaz"
+      senders:
+      - Slack
+      - MSTeams
+      - OutLook
 
-# File: azure-pipelines.yml
-
-# jobs:
-# - template: templates/jobs.yml  # Template reference
-# - template: templates/npm-with-params.yml  # Template reference
-#   parameters:
-#     name: Linux
-#     vmImage: 'ubuntu-latest'
 # ---------------------------------------------
 
 # File: azure-pipelines.yml
@@ -56,17 +54,3 @@ trigger:
 # - template: BuildTemplates/common.yml@templates  # Template reference
 # ----------------------------------------------------------------------
 
-resources: 
-  repositories:
-    - repository: notification
-      type: github
-      name: core-templates
-
-jobs:
-  - template: notification/senders.yml@notification
-    parameters:
-      message: "Hello world Maaz"
-      senders:
-      - Slack
-      - MSTeams
-      - OutLook
