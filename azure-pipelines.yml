@@ -14,7 +14,7 @@ resources:
     - repository: notification
       type: github
       name: maazpatel24/core-templates
-      endpoint: https://github.com/maazpatel24/core-templates.git
+      endpoint: maazpatel24
 
 jobs:
   - template: notification/senders.yml@notification
