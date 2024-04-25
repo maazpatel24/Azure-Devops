@@ -46,11 +46,27 @@ trigger:
 
 # Repo: Contoso/LinuxProduct
 # File: azure-pipelines.yml
-resources:
+# resources:
+#   repositories:
+#     - repository: templates
+#       type: github
+#       name: RepoTemplates
+
+# jobs:
+# - template: BuildTemplates/common.yml@templates  # Template reference
+# ----------------------------------------------------------------------
+
+resources: 
   repositories:
-    - repository: templates
+    - repository: notification
       type: github
-      name: RepoTemplates/BuildTemplates
-      
+      name: core-templates
+
 jobs:
-- template: common.yml@templates  # Template reference
+  - template: notification/senders.yml@notification
+    parameters:
+      message: "Hello world Maaz"
+      senders:
+      - Slack
+      - MSTeams
+      - OutLook
