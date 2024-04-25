@@ -13,7 +13,7 @@ resources:
   repositories:
     - repository: notification
       type: github
-      name: maazpatel24/core-templates
+      name: core-templates
       endpoint: maazpatel24
 
 jobs:
