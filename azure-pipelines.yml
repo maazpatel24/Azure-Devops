@@ -17,7 +17,7 @@ resources:
       endpoint: maazpatel24-connection
 
 jobs:
-  - template: notification/senders.yml@notification
+  - template: notifications/senders.yml@notification
     parameters:
       message: "Hello world Maaz"
       senders:
