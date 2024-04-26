@@ -3,12 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
-
-pool:
-  vmImage: ubuntu-latest
-
 resources: 
   webhooks:
     - webhook: MyWebHook
@@ -20,6 +14,11 @@ resources:
       name: maazpatel24/core-templates
       endpoint: maazpatel24-connection
       ref: main
+      
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
 
 jobs:
   - template: notifications/senders.yml@notification
