@@ -13,7 +13,11 @@ resources:
       type: github
       name: maazpatel24/core-templates
       endpoint: maazpatel24-connection
-      ref: main
+      ref: refs/heads/main
+      trigger:
+        branches:
+          include:
+            - main
       
 trigger: none
 
