@@ -19,6 +19,7 @@ trigger: none
 
 variables:
   branchRef: '${{ parameters.MyWebHook.ref }}'
+  repoName: '${{ parameters.MyWebHook.repository.full_name }}'
 
 pool:
   vmImage: ubuntu-latest
@@ -35,6 +36,7 @@ stages:
       - script: |
           # echo ${{ parameters.MyWebHook.ref }}
           echo $(branchRef)
+          echo $(repoName)
   # - template: notifications/senders.yml@notification
   #   parameters:
   #     message: "Hello world Maaz"
