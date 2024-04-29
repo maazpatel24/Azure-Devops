@@ -30,7 +30,7 @@ stages:
   jobs:
   - job: 
     steps:  
-      - script: echo ${{ parameters.MyWebHook.payload.ref }}
+      - script: echo ${{ parameters.MyWebHook.ref }}
   # - template: notifications/senders.yml@notification
   #   parameters:
   #     message: "Hello world Maaz"
