@@ -14,12 +14,17 @@ resources:
       name: maazpatel24/core-templates
       endpoint: maazpatel24-connection
       ref: refs/heads/main
-      trigger:
-        branches:
-          include:
-            - main
+
       
-trigger: none
+trigger: 
+  branches:
+    include:
+      - main
+    exclude:
+      - 'refs/heads/main'
+  paths:
+    exclude:
+      - '*'
 
 pool:
   vmImage: ubuntu-latest
