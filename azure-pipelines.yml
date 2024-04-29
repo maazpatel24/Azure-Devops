@@ -19,7 +19,7 @@ resources:
 trigger: 
   branches:
     include:
-      - main
+      - none
   # paths:
   #   exclude:
   #     - '*'
