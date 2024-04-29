@@ -20,9 +20,9 @@ trigger:
   branches:
     include:
       - main
-  paths:
-    exclude:
-      - '*'
+  # paths:
+  #   exclude:
+  #     - '*'
 
 pool:
   vmImage: ubuntu-latest
@@ -30,6 +30,7 @@ pool:
 stages:
 - stage: Build
   displayName: Stage 1
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
   jobs:
   - template: notifications/senders.yml@notification
     parameters:
