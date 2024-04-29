@@ -37,7 +37,7 @@ stages:
           # echo ${{ parameters.MyWebHook.ref }}
           echo $(branchRef)
           echo $(repoName)
-          $(Build.Repository.Name)
+          echo $(Build.Repository.Name)
   # - template: notifications/senders.yml@notification
   #   parameters:
   #     message: "Hello world Maaz"
