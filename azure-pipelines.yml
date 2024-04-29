@@ -18,7 +18,7 @@ resources:
 trigger: none
 
 variables:
-  -branchRef: parameters.MyWebHook.ref
+  branchRef: '${{ parameters.MyWebHook.ref }}'
 
 pool:
   vmImage: ubuntu-latest
@@ -26,14 +26,14 @@ pool:
 stages:
 - stage: Build
   displayName: Stage 1
-  # condition: eq( '$(branchRef)', 'refs/heads/main')
+  condition: eq( '$(branchRef)', 'refs/heads/main')
   
   # condition: ne(variables['Build.SourceBranch'], 'refs/heads/main')
   jobs:
   - job: 
     steps:  
       - script: |
-          echo ${{ parameters.MyWebHook.ref }}
+          # echo ${{ parameters.MyWebHook.ref }}
           echo $(branchRef)
   # - template: notifications/senders.yml@notification
   #   parameters:
