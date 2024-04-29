@@ -27,7 +27,10 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-jobs:
+stages:
+- stage: Build
+  displayName: Stage 1
+  jobs:
   - template: notifications/senders.yml@notification
     parameters:
       message: "Hello world Maaz"
@@ -35,6 +38,16 @@ jobs:
       - Slack
       - MSTeams
       - OutLook
+
+
+# jobs:
+#   - template: notifications/senders.yml@notification
+#     parameters:
+#       message: "Hello world Maaz"
+#       senders:
+#       - Slack
+#       - MSTeams
+#       - OutLook
 
 # ---------------------------------------------
 
