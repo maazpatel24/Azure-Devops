@@ -15,7 +15,7 @@ resources:
       type: github
       name: maazpatel24/core-templates
       endpoint: maazpatel24-connection
-      ref: main
+      ref: ref/heads/main
 
 jobs:
   - template: notifications/senders.yml@notification
